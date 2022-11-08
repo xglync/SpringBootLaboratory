@@ -1,0 +1,26 @@
+server:
+  port: 8088  # 配置服务端口
+
+# 数据源配置
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql.xglync.icu:3306/scoresys
+    username: admin1
+    password: 123456
+    druid:
+      filters: stat
+      max-active: 20
+      initial-size: 1
+      max-wait: 60000
+
+# mybatis配置
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml #mapper配置文件的位置
+  type-aliases-package: org.example.pojo             #别名识别，包路径，配置为pojo所在的包路径
+  configuration:
+    map-underscore-to-camel-case: true              #java驼峰式命名方式和Mysql中匈牙利式下划线命名转换
+    use-generated-keys: true                        #开启主键生成策略
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
