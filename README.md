@@ -1,2 +1,2 @@
 # SpringBootLaboratory
-I debugand try my web server at here.
+I debug and try my web server at here.
